@@ -36,7 +36,7 @@ export default {
     },
   },
   created() {
-    bus.$on("idadeMudou", (idade) => {
+    bus.quandoIdadeMudar((idade) => {
       this.idade = idade;
     });
   },
