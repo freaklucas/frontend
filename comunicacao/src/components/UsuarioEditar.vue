@@ -10,14 +10,16 @@
 </template>
 
 <script>
+import bus from "@/bus.js";
+
 export default {
   props: {
     idade: Number,
   },
   methods: {
     alterarIdade() {
-      //   this.idade = 33;
-      this.$emit("idadeMudou", 33);
+      this.idade += 1;
+      bus.$emit("idadeMudou", this.idade);
     },
   },
 };

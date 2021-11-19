@@ -14,6 +14,8 @@
 </template>
 
 <script>
+import bus from "@/bus.js";
+
 export default {
   props: {
     nome: {
@@ -32,6 +34,11 @@ export default {
       this.nome = "Lucas Oliveira";
       this.$emit("nomeMudou", this.nome);
     },
+  },
+  created() {
+    bus.$on("idadeMudou", (idade) => {
+      this.idade = idade;
+    });
   },
 };
 </script>
