@@ -5,6 +5,9 @@
     <p>
       Nome do usuario: <strong>{{ inverterNome() }}</strong>
     </p>
+    <p>
+      Idade do usuario: <strong>{{ idade }}</strong>
+    </p>
     <button @click="reiniciarNome">Reiniciar nome</button>
     <button @click="reiniciarFn">Reiniciar nome(Callack)</button>
   </div>
@@ -19,6 +22,7 @@ export default {
       //  default: 'default na props'
     },
     reiniciarFn: Function,
+    idade: Number,
   },
   methods: {
     inverterNome() {
