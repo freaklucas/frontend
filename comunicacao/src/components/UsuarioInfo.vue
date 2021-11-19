@@ -6,6 +6,7 @@
       Nome do usuario: <strong>{{ inverterNome() }}</strong>
     </p>
     <button @click="reiniciarNome">Reiniciar nome</button>
+    <button @click="reiniciarFn">Reiniciar nome(Callack)</button>
   </div>
 </template>
 
@@ -17,6 +18,7 @@ export default {
       required: true,
       //  default: 'default na props'
     },
+    reiniciarFn: Function,
   },
   methods: {
     inverterNome() {
