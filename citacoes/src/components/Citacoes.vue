@@ -5,9 +5,9 @@
       <button @click="numero++">&gt;</button>
     </span>
     <Citacao>
-      <h1>{{ citacoes[indice].fonte }}</h1>
-      <p>{{ citacoes[indice].texto }}</p>
-      <h6>{{ citacoes[indice].autor }}</h6>
+      <h1 slot="fonte">{{ citacoes[indice].fonte }}</h1>
+      <p slot="texto">{{ citacoes[indice].texto }}</p>
+      <h6 slot="autor">{{ citacoes[indice].autor }}</h6>
     </Citacao>
   </div>
 </template>
