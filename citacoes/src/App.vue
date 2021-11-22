@@ -1,7 +1,10 @@
 <template>
   <div id="app">
-    <Citacoes />
-    <Sobre />
+    <span>
+      <button @click="componente = 'Citacoes'">Citações</button>
+      <button @click="componente = 'Sobre'">Sobre</button>
+    </span>
+    <component :is="componente" />
   </div>
 </template>
 
@@ -11,6 +14,11 @@ import Sobre from "./components/Sobre";
 
 export default {
   components: { Citacoes, Sobre },
+  data() {
+    return {
+      componente: "Citacoes",
+    };
+  },
 };
 </script>
 
