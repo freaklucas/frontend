@@ -18,16 +18,33 @@
         </Rotulo>
         <Rotulo nome="Características do Problema">
           <span class="mr-4"
-            ><input type="checkbox" value="reproduzivel" /> Reproduzível</span
+            ><input
+              v-model="caracteristicas"
+              type="checkbox"
+              value="Reproduzivel"
+            />
+            Reproduzível</span
           >
           <span
-            ><input type="checkbox" value="intermitente" /> Intermitente</span
+            ><input
+              v-model="caracteristicas"
+              type="checkbox"
+              value="Intermitente"
+            />
+            Intermitente</span
           >
         </Rotulo>
         <Rotulo nome="Qual produto?">
-          <span class="mr-4"><input type="radio" /> Web</span>
-          <span class="mr-4"><input type="radio" /> Mobile</span>
-          <span><input type="radio" /> Outro</span>
+          <span class="mr-4"
+            ><input type="radio" value="Web" v-model="produto" /> Web</span
+          >
+          <span class="mr-4"
+            ><input type="radio" value="Mobile" v-model="produto" />
+            Mobile</span
+          >
+          <span
+            ><input type="radio" value="Outro" v-model="produto" /> Outro</span
+          >
         </Rotulo>
         <Rotulo nome="Prioridade">
           <select name="" id="">
@@ -55,10 +72,20 @@
           <span style="white-space: pre">{{ mensagem }}</span>
         </Rotulo>
         <Rotulo nome="Marque as Opções">
-          <span>???</span>
+          <span>
+            <ul>
+              <li
+                v-for="caract in caracteristicas"
+                :key="caract"
+                style="white-space: line"
+              >
+                {{ caract }}
+              </li>
+            </ul>
+          </span>
         </Rotulo>
         <Rotulo nome="Qual produto?">
-          <span>???</span>
+          <span>{{ produto }}</span>
         </Rotulo>
         <Rotulo nome="Prioridade">
           <span>???</span>
@@ -81,6 +108,8 @@ export default {
   data() {
     return {
       mensagem: "",
+      caracteristicas: [],
+      produto: "web",
       usuario: {
         email: "",
         senha: "",
