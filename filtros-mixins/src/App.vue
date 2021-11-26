@@ -2,7 +2,10 @@
   <div id="app">
     <h1>Filtros & Mixins</h1>
     <hr />
-    <p>{{ cpf | cpf }}</p>
+    <p>{{ cpf | cpf | inverter }}</p>
+    <hr />
+    <h1>Filtro de telefone</h1>
+    <p>{{ tel | number }}</p>
   </div>
 </template>
 
@@ -17,10 +20,18 @@ export default {
 
       return arr.join("");
     },
+    number(val) {
+      const arr = val.split("");
+      arr.splice(2, 0, ".");
+      arr.splice(10, 0, "-");
+
+      return arr.join("");
+    },
   },
   data() {
     return {
       cpf: "70444741200",
+      tel: "64993420591",
     };
   },
 };
