@@ -10,6 +10,14 @@ Vue.filter("inverter", (valor) => {
     .join("");
 });
 
+Vue.mixin({
+  data() {
+    return {
+      global: "Estou no mixin global",
+    };
+  },
+});
+
 new Vue({
   render: (h) => h(App),
 }).$mount("#app");
