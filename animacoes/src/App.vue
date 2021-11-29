@@ -5,7 +5,7 @@
     <b-button variant="primary" @click="exibir = !exibir"
       >Mostrar mensagem</b-button
     >
-    <transition>
+    <transition name="fade">
       <b-alert variant="info" show v-if="exibir">{{ msg }}</b-alert>
     </transition>
   </div>
@@ -34,5 +34,14 @@ export default {
 }
 button {
   margin-bottom: 18px;
+}
+
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
+}
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 2s;
 }
 </style>
