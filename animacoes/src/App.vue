@@ -8,6 +8,9 @@
     <transition name="fade">
       <b-alert variant="info" show v-if="exibir">{{ msg }}</b-alert>
     </transition>
+    <transition name="slide">
+      <b-alert variant="info" show v-if="exibir">{{ msg }}</b-alert>
+    </transition>
   </div>
 </template>
 
@@ -43,5 +46,31 @@ button {
 .fade-enter-active,
 .fade-leave-active {
   transition: opacity 2s;
+}
+
+@keyframes slide-in {
+  from {
+    tranform: translateY(40px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-out {
+  from {
+    tranform: translateY(0);
+  }
+  to {
+    transform: translateY(40px);
+  }
+}
+
+.slide-enter-active {
+  animation: slide-in 2s ease;
+}
+
+.slide-leave-active {
+  animation: slide-in 2s ease;
 }
 </style>
