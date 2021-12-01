@@ -33,7 +33,9 @@ h1, h2, h3 {
     font-weight: 600;
     white-space: nowrap;
 }
-
+.menu a:hover {
+    background-color: #0086a3;
+}
 .menu .active {
     background-color: #2392f0;
 }
