@@ -13,7 +13,7 @@ export default new Router({
       component: Setup,
     },
     {
-      path: "/usuario",
+      path: "/usuario/:id",
       component: Usuario,
     },
   ],
