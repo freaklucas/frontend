@@ -6,7 +6,7 @@
       {{ id }}
     </p>
     <p>
-      <strong>Código de confirmação: </strong>
+      <strong>Código de confirmação do usuário: </strong>
       {{ $route.params.id }}
     </p>
   </div>
