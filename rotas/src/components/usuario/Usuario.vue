@@ -1,11 +1,20 @@
 <template>
   <div class="usuario">
     <h2>Seção de Usuário</h2>
+    <hr />
+    <button sucesso @click="irParaInicio">Voltar</button>
   </div>
 </template>
 
 <script>
-export default {};
+export default {
+  methods: {
+    irParaInicio() {
+      this.$router.push("/");
+      // this.$router.push({ path: "/"});
+    },
+  },
+};
 </script>
 
 <style>
