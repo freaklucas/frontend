@@ -1,6 +1,6 @@
 <template>
   <div class="usuario">
-    <h2>Seção de Usuário</h2>
+    <h2>Seção inicial de Usuário</h2>
     <hr />
     <router-view />
     <button sucesso @click="irParaInicio">Voltar</button>
