@@ -13,7 +13,6 @@ export default new Router({
   mode: "history",
   routes: [
     {
-      // name: "inicio",
       path: "/",
       component: Setup,
     },
