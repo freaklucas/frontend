@@ -14,4 +14,10 @@ export default new Vuex.Store({
         .reduce((total, atual) => total + atual, 0);
     },
   },
+  mutations: {
+    // seters
+    adicionarProduto(state, payload) {
+      state.produtos.push(payload);
+    },
+  },
 });
