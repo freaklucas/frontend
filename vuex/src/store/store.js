@@ -15,9 +15,16 @@ export default new Vuex.Store({
     },
   },
   mutations: {
-    // seters
+    // seters -> alterar o estado central
     adicionarProduto(state, payload) {
       state.produtos.push(payload);
+    },
+  },
+  actions: {
+    adicionarProduto(context, payload) {
+      setTimeout(() => {
+        context.commit("adicionarProduto", payload);
+      }, 1000);
     },
   },
 });
