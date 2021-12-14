@@ -1,5 +1,6 @@
 <template>
   <Painel titulo="Loja Virtual" verde>
+    Usuário: {{ this.$store.getters.getNome }}
     <div class="loja">
       <span>Adicionar</span>
       <input type="number" v-model.number="quantidade" />
