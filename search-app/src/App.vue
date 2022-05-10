@@ -17,7 +17,7 @@ function filteredList() {
   <div class="item fruit" v-for="fruit in filteredList()" :key="fruit">
     <h2>{{ fruit }}</h2>
   </div>
-  <div class="item error" v-if="input && filteredList().length">
+  <div class="item error" v-if="input && filteredList().length == 0">
     <h2>No results found!!</h2>
   </div>
 </template>
