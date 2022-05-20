@@ -2,25 +2,28 @@ import { createStore } from "vuex";
 
 export default createStore({
   state: {
-    users: [],
-    usersFilter: [],
+    characters: [],
+    charactersFilter: [],
   },
   mutations: {
-    setUsers(state, payload) {
-      state.users = payload;
+    setCharacters(state, payload) {
+      state.characters = payload;
     },
-    setUsersFilter(state, payload) {
-      state.usersFilter = payload;
+    setCharactersFilter(state, payload) {
+      state.charactersFilter = payload;
     },
   },
   actions: {
     async getCharacters({ commit }) {
       try {
-        const response = await fetch("https://fakestoreapi.com/users");
+        const response = await fetch(
+          "https://rickandmortyapi.com/api/character"
+        );
 
-        const data = response.json();
+        const data = await response.json();
 
-        console.log(data);
+        commit("setCharacters", data.results);
+        commit("setCharactersFilter", data.results);
       } catch (e) {
         console.log(e);
       }
