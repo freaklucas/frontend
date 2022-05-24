@@ -1,17 +1,20 @@
 <template>
   <div class="container">
     <h1>Personagens</h1>
+    <FilterStatus />
     <ListCharacters />
   </div>
 </template>
 
 <script>
 import ListCharacters from "@/components/ListCharacters";
+import FilterStatus from "./components/FilterStatus.vue";
 
 export default {
   name: "App",
   components: {
     ListCharacters,
+    FilterStatus,
   },
 };
 </script>
