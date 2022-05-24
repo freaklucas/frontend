@@ -15,15 +15,17 @@
         ></span>
         <span>{{ character.status }} - {{ character.species }}</span>
       </div>
-      <div class="origin">
+      <div class="origen">
         <span>
           Origin:
           {{ character.origin.name }}
         </span>
       </div>
       <div class="location">
-        Location:
-        {{ character.location.name }}
+        <span>
+          Location:
+          {{ character.location.name }}
+        </span>
       </div>
     </div>
   </div>
