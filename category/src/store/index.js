@@ -34,6 +34,17 @@ export default createStore({
       });
       commit("setCharactersFilter", results);
     },
+    filterName({ commit, state }, name) {
+      const formatName = name.toUpperCase();
+      const results = state.characters.filter((character) => {
+        const characterName = character.name.toLowerCase();
+
+        if (characterName.includes(formatName)) {
+          return character;
+        }
+      });
+      commit("setCharactersFilter", results);
+    },
   },
   modules: {},
 });
