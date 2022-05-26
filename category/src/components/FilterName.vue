@@ -1,11 +1,32 @@
 <template>
   <div class="search">
-    <input type="text" placeholder="pesquise pelo nome" />
+    <input
+      type="text"
+      placeholder="Pesquise pelo nome"
+      v-model="name"
+      @keyup="filter()"
+    />
   </div>
 </template>
 
 <script>
-export default {};
+import { ref } from "vue";
+import { useStore } from "vuex";
+export default {
+  setup() {
+    const store = useStore();
+    const name = ref("");
+
+    const filter = () => {
+      store.dispatch("filterName", name.value);
+    };
+
+    return {
+      name,
+      filter,
+    };
+  },
+};
 </script>
 
 <style lang="scss">

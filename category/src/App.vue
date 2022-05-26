@@ -2,6 +2,7 @@
   <div class="container">
     <h1>Personagens</h1>
     <FilterStatus />
+    <FilterName />
     <ListCharacters />
   </div>
 </template>
@@ -9,10 +10,12 @@
 <script>
 import ListCharacters from "@/components/ListCharacters";
 import FilterStatus from "./components/FilterStatus.vue";
+import FilterName from "./components/FilterName.vue";
 
 export default {
   name: "App",
   components: {
+    FilterName,
     ListCharacters,
     FilterStatus,
   },
