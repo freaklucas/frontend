@@ -35,7 +35,7 @@ export default createStore({
       commit("setCharactersFilter", results);
     },
     filterName({ commit, state }, name) {
-      const formatName = name.toUpperCase();
+      const formatName = name.toLowerCase();
       const results = state.characters.filter((character) => {
         const characterName = character.name.toLowerCase();
 
