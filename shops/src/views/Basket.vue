@@ -4,7 +4,12 @@
   
         <div class="item">
           <div class="remove">Remover Produto</div>
-          <div class="photo"><img src="https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_.jpg" alt=""></div>
+          <div class="photo">
+              <img 
+                src="https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_.jpg" 
+                alt=""
+              >
+          </div>
           <div class="description">Mens Casual Premium Slim Fit T-Shirts </div>
           <div class="price">
             <span class="quantity-area">
@@ -25,7 +30,6 @@
   
   export default {
     name: 'Basket',
-  
     methods: {
      
     },
