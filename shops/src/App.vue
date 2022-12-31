@@ -13,10 +13,12 @@
     
     created() {
       this.$store.dispatch('loadProducts');
+      this.$store.dispatch('loadProductsBag');
     },
     computed : 
     mapState([
-      'productsInBag'
+      'productsInBag',
+      'loadProductsBag'
     ]),
   }
   
