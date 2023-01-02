@@ -13,13 +13,17 @@
         </div>
         <h4>{{ product.title }}</h4>
         <p class="price">{{ product.price.toFixed(2) }}</p>
-        <button v-if="!isInBag(product)" @click="addToBag(product)">
+        <button 
+          v-if="!isInBag(product)" 
+          @click="addToBag(product)"
+        >
           Adicionar ao carrinho
         </button>
         <button 
           v-else 
           class="remove"
-          @click="this.$store.dispatch('removeFromBag', product.id)"
+          @click="this.$store.
+            dispatch('removeFromBag', product.id)"
         >
           Remover do carrinho
         </button>
@@ -45,7 +49,7 @@ export default {
    },
    isInBag(product) {
     return this.productsInBag.find(item => item.id == product.id)
-   }
+   },
   }
 }
 </script>

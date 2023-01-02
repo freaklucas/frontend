@@ -42,6 +42,12 @@
         <div class="grand-total">
           Total do pedido: R$ {{ orderTotal() }}
         </div>
+        <div class="fav">
+          <h3>Favoritos:</h3>
+          <div>
+            teste
+          </div>
+        </div>
       </template>
 
       <template v-else>
@@ -49,7 +55,6 @@
           <h3>Carrinho está vazio 🛒 ...</h3>
         </div>
       </template>
-
     </div>
   </div>
 </template>
@@ -152,6 +157,9 @@ export default {
     }
 
   }
-
+  .fav {
+    padding: 12px;
+    margin-top: 10px;
+  }
 }
 </style>

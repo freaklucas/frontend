@@ -5,7 +5,6 @@ export default createStore({
   state: {
    products: [],
    productsInBag: [],
-  
   },
   getters: {
   },
