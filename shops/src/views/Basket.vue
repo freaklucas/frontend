@@ -49,7 +49,6 @@
           </div>
         </div>
       </template>
-
       <template v-else>
         <div>
           <h3>Carrinho está vazio 🛒 ...</h3>

@@ -20,6 +20,12 @@
           Adicionar ao carrinho
         </button>
         <button 
+          v-if="!isInBag(product)" 
+          @click="addLike()"
+        >
+          LIKE
+        </button>
+        <button 
           v-else 
           class="remove"
           @click="this.$store.
@@ -40,7 +46,8 @@ export default {
   computed : 
     mapState([
       'products',
-      'productsInBag'
+      'productsInBag',
+      'like'
     ]),
   methods: {
    addToBag(product) {
@@ -50,6 +57,9 @@ export default {
    isInBag(product) {
     return this.productsInBag.find(item => item.id == product.id)
    },
+   addLike() {
+    this.$store.commit('addLike');
+   }
   }
 }
 </script>

@@ -5,6 +5,7 @@ export default createStore({
   state: {
    products: [],
    productsInBag: [],
+   like: 0,
   },
   getters: {
   },
@@ -15,11 +16,16 @@ export default createStore({
     loadProductsBag(state, products) {
       state.productsInBag = products;
     },
+    loadLikeBag(state, products) {
+      state.like = products;
+    },
     addToBag(state, product) {
       state.productsInBag.push(product);
       localStorage.
         setItem("productsInBag", JSON.
           stringify(state.productsInBag));
+      console.log(JSON.
+        stringify(state.productsInBag))
     },
     removeFromBag(state, productId) {
       let updatedBag = state.productsInBag
@@ -30,6 +36,9 @@ export default createStore({
       localStorage.
         setItem("productsInBag", JSON.
           stringify(state.productsInBag));
+    },
+    addLike(state) {
+      state.like++;
     }
   },
   actions: {
@@ -44,18 +53,29 @@ export default createStore({
     loadProductsBag({ commit }) {
       if (localStorage.getItem("productsInBag")) {
         commit('loadProductsBag', 
-          JSON.parse(localStorage.getItem("productsInBag")));
+          JSON.parse(localStorage
+            .getItem("productsInBag")));
+      }
+    },
+
+    loadLikeBag({ commit }) {
+      if (localStorage.getItem("like")) {
+        commit('loadLikeBag', 
+          JSON.parse(localStorage
+            .getItem("like")));
       }
     },
 
     addToBag({ commit }, product) {
       commit('addToBag', product);
     },
+    addLike({commit}) {
+      commit('addLike');
+    },
     removeFromBag({commit}, productId) {
       if (confirm('Deseja remover o item?')) {
         commit('removeFromBag', productId);
       }
-
     }
   },  
   modules: {
